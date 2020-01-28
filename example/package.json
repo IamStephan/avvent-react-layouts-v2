@@ -5,11 +5,12 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@avvent/react-layouts": "link:..",
     "prop-types": "^15.6.2",
-    "react": "^16.4.1",
+    "react": "link:../node_modules/react",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "react-layouts-v2": "link:.."
+    "sanitize.css": "^11.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

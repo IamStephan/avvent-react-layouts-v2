@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'react-layouts-v2'
+import { Flex } from 'react-layouts-v2'
 
 export default class App extends Component {
   render () {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <Flex spacing-phone={{
+          margin: 12
+        }} debug spacing={{
+          padding: '50%'
+        }} />
       </div>
     )
   }
