@@ -49,32 +49,32 @@ const FlexContainer = styled.div<Props>`
       Object.keys(breakpnt).map(key => {
         let styles: Array<string> = []
 
-        //Flow
+        // Flow
         if(props['flow-' + key]) {
           if(props['flow-' + key].direction) styles.push(`flex-direction: ${props['flow-' + key].direction};`)
           if(props['flow-' + key].wrap) styles.push(`flex-wrap: ${props['flow-' + key].wrap ? 'wrap' : 'nowrap'};`)
         }
         
 
-        //place-items
+        // Place-items
         if(props['place-items-' + key]) {
           if(props['place-items-' + key].justify) styles.push(`justify-content: ${props['place-items-' + key].justify};`)
           if(props['place-items-' + key].align) styles.push(`align-items: ${props['place-items-' + key].justify.align};`)
         }
 
-        //place-content
+        // Place-content
         if(props['place-content-' + key]) {
           if(props['place-content-' + key].align) styles.push(`align-content: ${props['place-content-' + key].align};`)
         }
 
 
-        //spacing
+        // Spacing
         if(props['spacing-' + key]) {
           if(props['spacing-' + key].margin)  styles.push(`margin: ${props['spacing-' + key].margin}${typeof props['spacing-' + key].margin === 'number' ? 'px' : ''};`)
           if(props['spacing-' + key].padding)  styles.push(`padding: ${props['spacing-' + key].padding}${typeof props['spacing-' + key].padding === 'number' ? 'px' : ''};`)
         }
 
-        //Compile all the values to a string
+        // Compile all the values to a string
         let compiled = styles.join('')
 
         let media = `
@@ -83,10 +83,10 @@ const FlexContainer = styled.div<Props>`
           }
         `
 
-        //Check if it is needed to put in the query
+        // Check if it is needed to put in the query
         if(styles.length === 0) return
         
-        //Push the media to the list
+        // Push the media to the list
         medias.push(media)
       })
     })
