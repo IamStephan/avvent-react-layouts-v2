@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import merge from 'deepmerge';
 
-import { flexContainer } from '../utils/default'
+import { flexContainer } from '../../utils/default'
 
 const FlexContainer = styled.div<Props>`
   ${props => {

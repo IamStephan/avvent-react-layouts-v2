@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import merge from 'deepmerge';
 
-import { boxFlex, boxGrid } from '../utils/default';
+import { boxFlex, boxGrid } from '../../utils/default';
 
 const BoxContainer = styled.div<Props>`
   box-sizing: border-box;
