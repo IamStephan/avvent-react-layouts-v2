@@ -22,7 +22,9 @@ const GridContainer = styled.div<Props>`
     // Grid
     styles.push(`grid-template-columns: ${allProps.grid.columns};`)
     styles.push(`grid-template-rows: ${allProps.grid.rows};`)
+    // Dubble check since it can be a empty array
     if(allProps.grid.areas.length !== 0) styles.push(`grid-template-areas: ${generateGridAreas(allProps.grid.areas)};`)
+    // Values can be null
     if(allProps.grid.auto.columns !== null) styles.push(`grid-auto-columns: ${allProps.grid.auto.columns}${typeof allProps.grid.auto.columns === 'number' ? 'px' : ''};`)
     if(allProps.grid.auto.rows !== null) styles.push(`grid-auto-rows: ${allProps.grid.auto.rows}${typeof allProps.grid.auto.rows === 'number' ? 'px' : ''};`)
 
@@ -39,7 +41,7 @@ const GridContainer = styled.div<Props>`
 
     // Gap
     styles.push(`grid-column-gap: ${allProps.gap.column}${typeof allProps.gap.column === 'number' ? 'px' : ''};`)
-    styles.push(`grid-column-row: ${allProps.gap.row}${typeof allProps.gap.row === 'number' ? 'px' : ''};`)
+    styles.push(`grid-row-gap: ${allProps.gap.row}${typeof allProps.gap.row === 'number' ? 'px' : ''};`)
 
     // Spacing
     styles.push(`margin: ${allProps.spacing.margin}${typeof allProps.spacing.margin === 'number' ? 'px' : ''};`)
