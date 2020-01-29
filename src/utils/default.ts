@@ -60,3 +60,44 @@ export const gridContainer = {
     padding: 0
   }
 }
+
+export const boxFlex = {
+  order: 0,
+  flex: {
+    grow: 0,
+    shrink: 0,
+    basis: 'auto'
+  },
+  'place-flex': {
+    align: 'auto'
+  },
+  col: 1,
+  useGrid: flexContainer.useGrid,
+  columns: flexContainer.columns,
+  gap: 0,
+  spacing: {
+    margin: 0,
+    padding: 0
+  }
+}
+
+export const boxGrid = {
+  column: {
+    start: '',
+    end: ''
+  },
+  row: {
+    start: '',
+    end: ''
+  },
+  area: '',
+  'place-grid': {
+    justify: 'stretch',
+    align: 'stretch'
+  },
+  gap: 0,
+  spacing: {
+    margin: 0,
+    padding: 0
+  }
+}
