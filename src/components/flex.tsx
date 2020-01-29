@@ -10,7 +10,7 @@ const FlexContainer = styled.div<Props>`
      * Styles for normal props (non breakpoint based)
      */
 
-    //Deep merge givin props with defaults (allows for values to always be present)
+    // Deep merge givin props with defaults (allows for values to always be present)
     let allProps = merge(flexContainer, props)
 
     let styles: Array<string> = []
@@ -18,22 +18,22 @@ const FlexContainer = styled.div<Props>`
     // Display
     styles.push(`display: ${allProps.display};`)
 
-    //Flow
+    // Flow
     styles.push(`flex-direction: ${allProps.flow.direction};`)
     styles.push(`flex-wrap: ${allProps.flow.wrap ? 'wrap' : 'nowrap'};`)
 
-    //place-items
+    // Place-items
     styles.push(`justify-content: ${allProps['place-items'].justify};`)
     styles.push(`align-items: ${allProps['place-items'].align};`)
 
-    //place-content
+    // Place-content
     styles.push(`align-content: ${allProps['place-content'].align};`)
 
-    //spacing
+    // Spacing
     styles.push(`margin: ${allProps.spacing.margin}${typeof allProps.spacing.margin === 'number' ? 'px' : ''};`)
     styles.push(`padding: ${allProps.spacing.padding}${typeof allProps.spacing.padding === 'number' ? 'px' : ''};`)
 
-    //Compile all the values to a string
+    // Compile all the values to a string
     let compiled = styles.join('') 
     return `${compiled}`
   }}
