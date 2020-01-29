@@ -125,7 +125,9 @@ ${props => {
             }
             
             // Spacing
-            if(props['spacing-' + key].margin) styles.push(`margin: ${props['spacing-' + key].margin}${typeof props['spacing-' + key].margin === 'number' ? 'px' : ''};`)
+            if(props['spacing-' + key]) {
+              if(props['spacing-' + key].margin) styles.push(`margin: ${props['spacing-' + key].margin}${typeof props['spacing-' + key].margin === 'number' ? 'px' : ''};`)
+            }
           }
         }
 

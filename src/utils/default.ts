@@ -101,3 +101,24 @@ export const boxGrid = {
     padding: 0
   }
 }
+
+export const positional = {
+  debug: false,
+  breakpoints: breakpoints,
+  type: 'relative',
+  spacing: {
+    margin: 0,
+    padding: 0
+  },
+  dimensions: {
+    width: null,
+    height: null
+  },
+  position: {
+    top: null,
+    right: null,
+    bottom: null,
+    left: null
+  },
+  'z-index': 1
+}
