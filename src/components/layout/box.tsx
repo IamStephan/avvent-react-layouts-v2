@@ -205,6 +205,109 @@ ${props => {
     let compiled = styles.join('') 
     return `${compiled}`
   }}
+
+  ${props => {
+    /**
+     * show-*
+     */
+
+    let medias: Array<string> = []
+
+    props.breakpoints.map((breakpnt, i, array) => {
+      Object.keys(breakpnt).map(key => {
+        let media: string = ''
+        
+        if(props['show-' + key]) {
+          // first breakpoint requires that the media query range from 0 to actual breakpoint
+          if(i === 0) {
+            let queryOne = `max-width: ${breakpnt[key]}${typeof breakpnt[key] === 'number' ? 'px' : ''}`
+            media = `
+              @media (${queryOne}) {
+                display: block;
+              }
+            `
+          } else {
+            let prevVal = Object.values(array[i - 1])[0]
+
+            let queryOne = `min-width: ${prevVal}${typeof prevVal === 'number' ? 'px' : ''}`
+            let queryTwo = `max-width: ${breakpnt[key]}${typeof breakpnt[key] === 'number' ? 'px' : ''}`
+
+            media = `
+              @media (${queryOne}) and (${queryTwo}) {
+                display: block;
+              }
+            `
+          }
+        }
+
+        // Compile all the values to a string
+
+        // Check if it is needed to put in the query
+        if(media === '') return
+
+        //Push the media to the list
+        medias.push(media)
+        medias.push('display: none;')
+      })
+    })
+
+    // All the media queries
+    let compiled = medias.reverse().join('')
+    console.log(compiled)
+
+    return `${compiled}`
+  }}
+
+  ${props => {
+    /**
+     * hidden-*
+     */
+
+    let medias: Array<string> = []
+
+    props.breakpoints.map((breakpnt, i, array) => {
+      Object.keys(breakpnt).map(key => {
+        let media: string = ''
+        
+        if(props['hidden-' + key]) {
+          // first breakpoint requires that the media query range from 0 to actual breakpoint
+          if(i === 0) {
+            let queryOne = `max-width: ${breakpnt[key]}${typeof breakpnt[key] === 'number' ? 'px' : ''}`
+            media = `
+              @media (${queryOne}) {
+                display: none;
+              }
+            `
+          } else {
+            let prevVal = Object.values(array[i - 1])[0]
+
+            let queryOne = `min-width: ${prevVal}${typeof prevVal === 'number' ? 'px' : ''}`
+            let queryTwo = `max-width: ${breakpnt[key]}${typeof breakpnt[key] === 'number' ? 'px' : ''}`
+
+            media = `
+              @media (${queryOne}) and (${queryTwo}) {
+                display: none;
+              }
+            `
+          }
+        }
+
+        // Compile all the values to a string
+
+        // Check if it is needed to put in the query
+        if(media === '') return
+        
+        //Push the media to the list
+        medias.push(media)
+      })
+    })
+
+    // All the media queries
+    let compiled = medias.reverse().join('')
+    console.log(compiled)
+
+    return `${compiled}`
+  }}
 `
 
 export interface Props {
