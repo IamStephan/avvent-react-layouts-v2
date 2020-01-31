@@ -1,6 +1,6 @@
 {
   "name": "@avvent/react-layouts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React component library that eases the creation of layouts, using flexbox, CSS grind and a smart box component. Responsive design kept in mind :)",
   "author": "IamStephan",
   "license": "MIT",
