@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import merge from 'deepmerge';
 
+import { merge } from '../../utils/helper_functions';
 import { positional } from '../../utils/default';
 
 const PositionalContainer = styled.div<Props>`

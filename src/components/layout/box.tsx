@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import merge from 'deepmerge';
 
+import { merge } from '../../utils/helper_functions';
 import { boxFlex, boxGrid } from '../../utils/default';
 
 const BoxContainer = styled.div<Props>`

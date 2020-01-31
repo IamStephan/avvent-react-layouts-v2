@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import merge from 'deepmerge';
 
+import { merge } from '../../utils/helper_functions';
 import { flexContainer } from '../../utils/default'
 
 const FlexContainer = styled.div<Props>`

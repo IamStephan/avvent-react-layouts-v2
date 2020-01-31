@@ -1,9 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import merge from 'deepmerge';
 
 import { gridContainer } from '../../utils/default';
-import { generateGridAreas } from '../../utils/helper_functions';
+import { generateGridAreas, merge } from '../../utils/helper_functions';
 
 const GridContainer = styled.div<Props>`
   ${props => {

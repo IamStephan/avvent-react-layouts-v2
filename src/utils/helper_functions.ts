@@ -1,3 +1,5 @@
+export {default as merge} from 'deepmerge'
+
 export function generateGridAreas(areas: Array<string>) {
   // Check if there is a defenition
   let arrayCopy = [...areas]
