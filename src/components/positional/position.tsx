@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { merge } from '../../utils/helper_functions';
-import { positional } from '../../utils/default';
+import { positional, breakpoints } from '../../utils/default';
 
 const PositionalContainer = styled.div<Props>`
   ${props => {
@@ -137,7 +137,10 @@ export interface Props {
 }
 
 export default class App extends React.Component<Props, {}> {
-  static defaultProps = positional
+  static defaultProps = {
+    breakpoints: breakpoints
+  }
+
   public render() {
     return (
       <PositionalContainer {...this.props}>

@@ -7,7 +7,6 @@ export const breakpoints = [
 
 export const flexContainer = {
   debug: false,
-  breakpoints: breakpoints,
   useGrid: false,
   columns: 12,
   gap: 10,
@@ -31,7 +30,6 @@ export const flexContainer = {
 
 export const gridContainer = {
   debug: false,
-  breakpoints: breakpoints,
   display: 'grid',
   grid: {
     columns: '1fr',
@@ -104,7 +102,6 @@ export const boxGrid = {
 
 export const positional = {
   debug: false,
-  breakpoints: breakpoints,
   type: 'relative',
   spacing: {
     margin: 0,

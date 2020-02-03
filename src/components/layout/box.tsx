@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { merge } from '../../utils/helper_functions';
-import { boxFlex, boxGrid } from '../../utils/default';
+import { boxFlex, boxGrid, breakpoints } from '../../utils/default';
 
 const BoxContainer = styled.div<Props>`
   box-sizing: border-box;
@@ -355,6 +355,10 @@ export interface Props {
 }
 
 export default class App extends React.Component<Props, {}> {
+  static defaultProps = {
+    breakpoints: breakpoints
+  }
+  
   public render() {
     return (
       <BoxContainer {...this.props}>

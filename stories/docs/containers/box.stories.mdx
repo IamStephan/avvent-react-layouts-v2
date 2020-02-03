@@ -1,0 +1,84 @@
+<Meta title='01 - docs/03 - containers/Box' />
+
+# Box component
+
+> The Box component will behave accoding to its parent layout
+
+```javascript
+import { Box } from '@avvent/react-layouts';
+```
+
+## Props
+### Flex specific
+
+| Props | Value type | Default | Description |
+|:---|:---:|:---:|:---|
+| order | number | `0` | Allows you to change the order of appearance inside the layout |
+| flex | { grow: number, shrink: number, basis: number OR string } | `{ grow: 0, shrink: 0, basis: 'auto' }` | Grow: how much should the component grow if there is available space in relation to other items. <br/> Shrink: how much should the component shrink if there is no available space in relation to other items <br/> Basis: the items prefered size. |
+| place-flex | { align: **enum[align1]** } | `{ align: 'auto' }` | How the component should align itself inside the layout on the main axis |
+| col | number | `1` | How many columns should the item occupy if useGrid is enabled on the parent |
+
+### Grid specific
+
+| Props | Value type | Default | Description |
+|:---|:---:|:---:|:---|
+| column | { start: string, end: string } | `{ start: '', end: '' }` | Start: Where the item should start on the grid column lines(the span key may be used). <br/> End: Where the item should end on the grid column lines(the span key may be used). |
+| row | { start: string, end: string } | `{ start: '', end: '' }` | Start: Where the item should start on the grid row lines(the span key may be used). <br/> End: Where the item should end on the row column lines(the span key may be used). |
+| place-grid | { align: **enum[align2]**, justify: **enum[justify2]** } | `{ align: 'stretch', justify: 'stretch' }` | Align: how the item should align itself on the cross axis on the grid. <br/> Justify: how the item should align itself on the main axis on the grid. |
+| area | string | `''` | On what grid area the component should be placed. (defined in the layout component) |
+
+### Both
+
+| Props | Value type | Default | Description |
+|:---|:---:|:---:|:---|
+| spacing | { margin: number OR string, padding: number OR string } | `{ margin: 0, padding: 0 }` | The margin and padding of the component. <br/> **NOTE:** The margin property will be ignored when the parent is a flex layout and the gap was defined. |
+
+### Enums
+| Enum | Values |
+|:---|:---:|
+| **align1** | `['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch']` |
+| **align2** | `['start', 'end', 'center', 'stretch']` |
+| **justify2** | `['start', 'end', 'center', 'stretch']` |
+
+## Smart props
+
+> It should be noted when a smart props is declared and some of its values are omitted it just reverts to the previously declared value or default value.
+
+| Prop | Syntax |
+|:---|:---:|
+| order | `order-[breakpointName]` |
+| flex | `flex-[breakpointName]` |
+| place-flex | `place-flex-[breakpointName]` |
+| col | `col-[breakpointName]` |
+| columns | `columns-[breakpointName]` |
+| row | `row-[breakpointName]` |
+| place-grid | `place-grid-[breakpointName]` |
+| area | `area-[breakpointName]` |
+| spacing | `spacing-[breakpointName]` |
+
+## Utility Props (also smart props)
+| Prop | Syntax | Description |
+|:---|:---:|:---|
+| hidden | `hidden-[breakpointName]` | When this props is present it will hide that item when the layout is in that breakpoint (e.g. `hidden-phone` will only hide the item on the phone breakpoint) |
+| show | `show-[breakpointName]` | When this prop is present it will hide the item on all the breakpoints except the one it is set to show (e.g. `show-laptop` will only show the item on the laptop breakpoint. The rest will be hidden) |
+
+## Usage example
+
+```jsx
+import React from 'React';
+import { Flex, Box } from '@avvent/react-layouts';
+
+export default function StickyHeaderExample(props) => {
+  return (
+    <Flex
+      debug
+      useGrid
+      columns={10}
+    >
+      <Box col={5} col-phone={10} hidden-laptop>
+        This box will span till halfway on all other devices except on the phone breakpoint where it will span till the end.
+        Also the item will be hidden on laptops
+      </Box>
+    </Flex>
+  )
+}

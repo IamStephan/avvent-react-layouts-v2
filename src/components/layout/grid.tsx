@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { gridContainer } from '../../utils/default';
+import { gridContainer, breakpoints } from '../../utils/default';
 import { generateGridAreas, merge } from '../../utils/helper_functions';
 
 const GridContainer = styled.div<Props>`
@@ -127,7 +127,6 @@ const GridContainer = styled.div<Props>`
 
     // All the media queries
     let compiled = medias.reverse().join('')
-    console.log(compiled)
 
     return `${compiled}`
   }}
@@ -186,7 +185,9 @@ export interface Props {
 }
 
 export default class Grid extends React.Component<Props, {}> {
-  static defaultProps = gridContainer
+  static defaultProps = {
+    breakpoints: breakpoints
+  }
 
   render() {
     const childrenWithInjectedProps = React.Children.map(this.props.children, child => React.cloneElement(child as React.ReactElement, {

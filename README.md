@@ -15,12 +15,12 @@
 ## Install
 **npm**
 ```bas
-npm install --save @avvent/react-layouts styled-components@^5.0.0 deepmerge@^4.2.2
+npm install --save @avvent/react-layouts styled-components@^5.0.0
 ```
 
 **yarn**
 ```bas
-yarn add @avvent/react-layouts styled-components@^5.0.0 deepmerge@^4.2.2
+yarn add @avvent/react-layouts styled-components@^5.0.0
 ```
 
 ## Breakpoints (Responsive design)

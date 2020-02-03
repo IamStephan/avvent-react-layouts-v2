@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { merge } from '../../utils/helper_functions';
-import { flexContainer } from '../../utils/default'
+import { flexContainer, breakpoints } from '../../utils/default'
 
 const FlexContainer = styled.div<Props>`
   ${props => {
@@ -145,7 +145,9 @@ export interface Props {
 }
 
 export default class App extends React.Component<Props, {}> {
-  static defaultProps = flexContainer
+  static defaultProps = {
+    breakpoints: breakpoints
+  }
 
   render() {
     const childrenWithInjectedProps = React.Children.map(this.props.children, child => React.cloneElement(child as React.ReactElement, {
