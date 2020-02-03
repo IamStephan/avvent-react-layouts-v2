@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Flex, Box } from '../../dist/index.es';
+import { Grid, Flex, Box } from '@avvent/react-layouts';
 
 export default {
   title: '02 - examples/01 - Hero'

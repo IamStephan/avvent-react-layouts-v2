@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@avvent/react-layouts@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@avvent/react-layouts/-/react-layouts-0.2.0.tgz#d7e4f647e9cd61a7ce70fcd53607700601cf930f"
+  integrity sha512-vQAlxwK5x1EuOy3KGlnif7dXNYsG/6aMwIq6PamEReu0FaAtQMSIr+zGLftuR+nC5HpKNE3OE5s2v0D0AG8/1g==
+
 "@babel/code-frame@7.8.3", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.0.0-beta.35", "@babel/code-frame@^7.8.0", "@babel/code-frame@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.8.3.tgz#33e25903d7481181534e12ec0a25f16b6fcf419e"
