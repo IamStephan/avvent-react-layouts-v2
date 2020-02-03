@@ -1,14 +1,18 @@
+<p align="center">
+  <img src='./static/branding.svg' />
+</p>
+
+[![NPM](https://img.shields.io/npm/v/@avvent/react-layouts.svg)](https://www.npmjs.com/package/@avvent/react-layouts) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 # **Avvent studio** presents: <!-- omit in toc -->
 ## @avvent/react-layouts <!-- omit in toc -->
 
 > A react component library that eases layout creation using css grids and flexbox coupled with a smart box component.
 
-[![NPM](https://img.shields.io/npm/v/@avvent/react-layouts.svg)](https://www.npmjs.com/package/@avvent/react-layouts) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Table of contents <!-- omit in toc -->
 - [Install](#install)
-- [Breakpoints (Responsive design)](#breakpoints-responsive-design)
-  - [Smart Props](#smart-props)
+- [Documentation](#documentation)
 - [Roadmap](#roadmap)
 - [License](#license)
 
@@ -23,56 +27,26 @@ npm install --save @avvent/react-layouts styled-components@^5.0.0
 yarn add @avvent/react-layouts styled-components@^5.0.0
 ```
 
-## Breakpoints (Responsive design)
-Breakpoints are used by the layout components to determine how the layout should look or behave depending on the device screen size.
-
-> They are also used by  smart props to behave as indented.
-
-**Default breakpoints**
-
-| Name    | Value  |
-| :------ | :----: |
-| phone   | `425`  |
-| tablet  | `768`  |
-| laptop  | `1024` |
-| desktop | `1440` |
-
-```js
-[
-  { phone: 425 },
-  { tablet: 768 },
-  { laptop: 1024 },
-  { desktop: 1440 }
-]
-```
-
-Default breakpoints can be custom (More can be added, removed or changed).
-
-> **NOTE:** All breakpoints apply max-width media query.
-
-### Smart Props
-
-Smart props are used by both the layout components and the box component. They align with the breakpoints defined on the components and follow a `prop-breakpoint` syntax.
-
-Each component will have smart props and will be indicated in their documentation.
-
-> **NOTE:** Props will be ignored if not supplied.
-
+## Documentation
+[Storybook Docs](https://iamstephan.github.io/avvent-react-layouts-v2/)
 
 
 ## Roadmap
 
 - [ ] Add universal smart prop (style-*)
-- [ ] Add Examples (Storybook?)
-- [ ] More in- depth code
+- [x] ~~Add Examples (Storybook?)~~
+  - [ ] More examples
+- [x] ~~More in- depth code~~
 - [ ] Add a float layout parent component
-- [ ] Setup a showcase website
+- [ ] Add a HTML tabled-based layout parent component
+- [x] ~~Setup a showcase website~~ (Storybook✅)
 - [ ] Add more functionality to debug prop
 - [ ] Performance optimizations ?
 - [ ] Add unit Tests
-- [ ] Add gutter prop to Flex component
-- [ ] Turn hidden-* to hidden-from-* & hidden-to-*
-- [ ] Add helper functions
+- [x] ~~Add gutter prop to Flex component~~
+- [x] ~~Turn hidden-* to hidden-from-* & hidden-to-*~~
+- [x] ~~Add helper functions~~
+- [ ] Add websites that use lib as a showcase
 
 
 ## License

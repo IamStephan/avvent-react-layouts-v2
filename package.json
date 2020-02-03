@@ -5,6 +5,7 @@
   "author": "IamStephan",
   "license": "MIT",
   "repository": "https://github.com/IamStephan/avvent-react-layouts-v2.git",
+  "homepage": "https://iamstephan.github.io/avvent-react-layouts-v2/",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
