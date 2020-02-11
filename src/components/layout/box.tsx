@@ -109,7 +109,7 @@ ${props => {
             //Column stretch
             if(props['col-' + key]) {
               // Columns and gap should be defined in the default props in parent component
-              styles.push(`width: calc(${props['col-' + key].col / props.columns * 100}% - ${props.gap}${typeof props.gap === 'number' ? 'px' : ''});`)
+              styles.push(`width: calc(${props['col-' + key] / props.columns * 100}% - ${props.gap}${typeof props.gap === 'number' ? 'px' : ''});`)
             }
             
 
