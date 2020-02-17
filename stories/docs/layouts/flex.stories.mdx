@@ -15,12 +15,11 @@ import { Flex } from '@avvent/react-layouts';
 
 | Props | Value type | Default | Description |
 |:---|:---:|:---:|:---|
-| debug | boolean | `false` | Puts a blue background on the parent and a border around its children to visualize where they are. |
+| debug | boolean | `false` | Puts a blue background on the parent and pools to visualize the columns. |
 | breakpoints | Array<{ [breakpointName]: number or string }> | `default breakpoints` | This is were you can define your own values or just leave the defaults |
-| display | **enum[display]** | `flex` | Whether the layout should be full width to its parent or inline |
-| useGrid | boolean | `false` | Should the component use a grid-like system |
-| columms | number | `12` | If `useGrid` is enabled, how many columns should the grid contain |
-| gap | number OR string | `0` | If `useGrid` is enabled, how much spacing should be between items |
+| inline | boolean | `false` | Whether the layout should be full width to its parent or inline |
+| columms | number | `12` | How many columns should the grid contain |
+| gap | number OR string | `0` | How much spacing should be between items |
 | flow | { direction: **enum[direction]**, wrap: boolean } | `{ direction: 'row', wrap: false }` | Direction: The direction of the items flow. <br/> Wrap: should the items go to a new row or column if space is spares |
 | place-items | { justify: **enum[justify]**, align: **enum[align1]** } | `{ justify: 'flex-start', align: 'flex-start' }` | Justify: alignment of the items on the main axis. <br/> Align: alignment of the items on the cross axis. |
 | place-content | { align: **enum[align2]** } | `{ align: 'flex-start' }` | Align: how all the content should be aligned on the cross axis if there is space available |
@@ -30,11 +29,10 @@ import { Flex } from '@avvent/react-layouts';
 ### Enums
 | Enum | Values |
 |:---|:---:|
-| **display** | `['flex', 'inline-flex']` |
 | **direction** | `['row', 'row-reverse', 'column', 'column-reverse']` |
-| **justify** | `['flex-start', 'flex-end', 'center', 'space-around', 'space-between']` |
-| **align1** | `['flex-start', 'flex-end', 'center', 'space-around', 'space-between']` |
-| **align2** | `['flex-start', 'flex-end', 'center', 'space-around', 'space-between', 'stretch']` |
+| **justify** | `['flex-start', 'flex-end', 'center', 'space-between', 'space-around']` |
+| **align1** | `['stretch', 'flex-start', 'flex-end', 'center', 'baseline']` |
+| **align2** | `['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'stretch']` |
 
 ## Smart props
 

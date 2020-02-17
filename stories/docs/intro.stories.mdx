@@ -5,8 +5,6 @@ import { Meta } from '@storybook/addon-docs/blocks';
 # Installation
 
 > This is a react layout library to help ease in the development of layouts. It has responsive design at its core and allows you define, add or remove breakpoints as you wish.
->
-> The smart box component is there to prevent you from adding to much code and make decisions by itself depending on what type of layout you wish to use.
 
 **Yarn**
 ```bas
@@ -22,47 +20,22 @@ npm --save @avvent/react-layouts styled-components@^5.0.0
 
 # Getting Acquainted
 ## Layout components
-Layout components are used as parent components for your layout. They are **required** to have a `box component(s)` as a child(ren). Currently there are only 2 layout components:
-* Flexbox (with grid-like support)
-* CSS Grid
+Layout components are used as parent components for your layout. They are **required** to have a `box component(s)` as a child(ren). Currently there is only layout component:
+* Flexbox grid
 
 > ### Layouts we wish to include:
->
+> * CSS Grid
 > * Float layout
 > * (HTML) Table-based Layout
 > * Masonry Grid
 >
 > NOTE: We are aware that the first two layouts are seen as something that should be avoided, if possible, but we have a few plans for them😉.
 
-## Positional Component
-There is only one positional component. The component is used when you want to set an elements position to anything other that block.
-You can also use breakpoints on this component if you wish for it to be responsive. It can be quite useful when creating something like a modal or a sidebar.
+## Box Component
 
-* Positional
-  * Relative
-  * Absolute
-  * Fixed
-  * Static (Does not have as wide browser support than the others)
-
-## Smart Box Component
-This component has the ability to detect what layout the parent component is using. It then adds the corresponding CSS values as to not bloat it with unneccessary values.
-To help better understand this component, think of it as a section in you layout.
-Keep in mind that this component **HAS** to be a child of the layout components **BUT** is not required for the positional component.
-If you wish to add a title to the layout, do so by making it a child of a box component
 
 > The reason a box component has to be a child of a layout component is because the layout parent passes some props directly to its children (Flexbox does this especially, since most of the layouts is actually done by the Flex item and not parent)
 
-# The Basics
-
-To get started you need to know what layout you would like to use.
-
-> Keep browser support in mind. Although css grid has support in most browsers it might still be more effective to use flexbox and its grid-like pattern.
-
-When you have decided what layout you would like to use the next step will be setting up the layout.
-Depending on the layout you use, you can setup different breakpoints (either the default or your own) on the layout using `smart props`.
-
-After you configured the layout component, you can now use the box compoennt to connect the final pieces.
-The box component will know what layout your using and adjust itself accordingly.
 
 ## Nested grids.
 You can use nested grids as long as they are inside a box component.
@@ -70,4 +43,4 @@ You can use nested grids as long as they are inside a box component.
 ## Smart props
 Each component will have a documented set of smart props you can use.
 Essentially they are props that align with the breakpoints defined (either the default or your own).
-They follow a `prop-breakpointName` syntax.
+They follow a `prop-breakpoint` syntax.
