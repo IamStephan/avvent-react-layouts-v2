@@ -22,6 +22,9 @@ const BoxContainer = styled.div<IProps>`
     styles.push(`margin-left: calc(${mergedProps.offset / mergedProps.columns * 100}% + (${returnCssValue(mergedProps.gap)} / 2));`)
     styles.push(`margin-right: calc(${returnCssValue(mergedProps.gap)} / 2);`)
 
+    styles.push(`margin-top: calc(${returnCssValue(mergedProps.gapV)} / 2);`)
+    styles.push(`margin-bottom: calc(${returnCssValue(mergedProps.gapV)} / 2);`)
+
     return styles.join(' ')
   }}
 
@@ -174,6 +177,7 @@ export interface IProps {
   col: number,
   offset: number,
   gap: number | string,
+  gapV: number| string,
   spacing: {
     padding: number | string
   }

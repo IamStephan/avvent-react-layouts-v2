@@ -1,6 +1,6 @@
 {
   "name": "@avvent/react-layouts",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "React component library that eases the creation of layouts, using flexbox, CSS grind and a smart box component. Responsive design kept in mind :)",
   "author": "IamStephan",
   "license": "MIT",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "@avvent/react-layouts": "^0.2.0",
     "@storybook/addon-docs": "^5.3.9",
+    "@storybook/addon-knobs": "^5.3.13",
     "@storybook/addon-viewport": "^5.3.10",
     "@storybook/react": "^6.0.0-alpha.2",
     "@svgr/rollup": "^2.4.1",

@@ -12,7 +12,6 @@ const DebugView = styled.svg`
   top: 0px;
   bottom: 0px;
   position: absolute;
-  z-index: 1;
 `
 
 const FlexContainer = styled.div<IProps>`
@@ -62,6 +61,7 @@ export interface IProps {
   inline: boolean,
   columns: number,
   gap: number | string,
+  gapV: number | string,
   'place-items': {
     justify: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around',
     align: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline'
@@ -85,7 +85,8 @@ export default class FlexGrid extends React.Component<IProps> {
       debug: this.props.debug,
       breakpoints: this.props.breakpoints,
       columns: this.props.columns,
-      gap: this.props.gap
+      gap: this.props.gap,
+      gapV: this.props.gapV
     }))
 
     const SVGid = Math.floor(Math.random() * 1000)
@@ -105,7 +106,7 @@ export default class FlexGrid extends React.Component<IProps> {
                 />
               </pattern>
             </defs>
-            <rect fill={`url(#grid_display_${SVGid})`} width='100%' height='100%' />
+            <rect fill={`url(#grid_display_${SVGid})`} width='100%' height={`calc(100% - ${returnCssValue(this.props.gapV)})`} y={`calc(${returnCssValue(this.props.gapV)} / 2)`} />
           </DebugView>
         ) : null}
 

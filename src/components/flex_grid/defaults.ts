@@ -6,6 +6,7 @@ const container = {
   inline: false,
   columns: 12,
   gap: 10,
+  gapV: 10,
   'place-items': {
     justify: 'flex-start',
     align: 'flex-start'
